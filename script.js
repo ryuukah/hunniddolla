@@ -1,15 +1,19 @@
 const aboutToggle = document.getElementById("aboutToggle");
 const infoPage = document.getElementById("infoPage");
+const arrow = document.getElementById("arrow");
 
 aboutToggle.addEventListener("click", () => {
+    const isOpen = aboutToggle.getAttribute("aria-expanded") === "true";
 
-    const open = infoPage.classList.toggle("open");
-
-    aboutToggle.classList.toggle("open", open);
-
-    aboutToggle.setAttribute(
-        "aria-expanded",
-        open ? "true" : "false"
-    );
-
+    if (isOpen) {
+        // CLOSE
+        aboutToggle.setAttribute("aria-expanded", "false");
+        infoPage.classList.remove("open");
+        arrow.classList.remove("open");
+    } else {
+        // OPEN
+        aboutToggle.setAttribute("aria-expanded", "true");
+        infoPage.classList.add("open");
+        arrow.classList.add("open");
+    }
 });
