@@ -6,45 +6,45 @@ html,
 body {
     margin: 0;
     padding: 0;
-    width: 100%;
-    min-height: 100%;
+    background: #191919;
 }
 
 body {
-    background: #191919;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #d6d6d6;
+    min-height: 100vh;
 
     display: flex;
     justify-content: center;
     align-items: flex-start;
 
-    padding: 30px 15px;
+    padding: 25px 15px;
+
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
-/* MAIN CONTAINER */
+/* SMALL BOX */
 
-.container {
+.about-box {
     width: 100%;
-    max-width: 900px;
+    max-width: 430px;
+
+    margin: 0 auto;
 }
 
 
-/* =========================
-   HEADER
-   ========================= */
+/* HEADING */
 
 .about-toggle {
     width: 100%;
-    min-height: 76px;
+    height: 48px;
 
-    padding: 0 28px;
+    padding: 0 18px;
 
-    border: 2px solid #777;
-    background: #191919;
+    border: 1px solid #aaa;
+    border-radius: 3px;
 
-    color: #d6d6d6;
+    background: #ecebee;
+    color: #4a484b;
 
     display: flex;
     align-items: center;
@@ -55,39 +55,14 @@ body {
     cursor: pointer;
 
     font-family: inherit;
+    font-size: 15px;
+    font-weight: 400;
 
-    transition:
-        background-color 0.25s ease,
-        border-color 0.25s ease;
+    transition: background 0.2s ease;
 }
 
 .about-toggle:hover {
-    background: #202020;
-    border-color: #a8a8a8;
-}
-
-
-/* TITLE */
-
-.about-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 14px;
-
-    font-size: 22px;
-    font-weight: 400;
-
-    letter-spacing: 0.5px;
-}
-
-.japanese {
-    color: #d7d7d7;
-}
-
-.english {
-    color: #cfcfcf;
+    background: #e5e3e6;
 }
 
 
@@ -95,78 +70,69 @@ body {
 
 .arrow {
     position: absolute;
+    right: 16px;
 
-    right: 28px;
-    top: 50%;
-
-    transform: translateY(-58%);
-
-    font-size: 30px;
+    font-size: 20px;
     line-height: 1;
 
-    color: #cfcfcf;
+    transform: translateY(-2px);
 
-    transition: transform 0.4s ease;
+    transition: transform 0.35s ease;
 }
 
 
-/* ARROW WHEN OPEN */
+/* ROTATE ARROW */
 
 .about-toggle.open .arrow {
-    transform: translateY(-42%) rotate(180deg);
+    transform: rotate(180deg) translateY(2px);
 }
 
 
-/* =========================
-   INFO PAGE
-   ========================= */
+/* INFO PAGE */
 
 .info-page {
     width: 100%;
 
-    background: #f3c9d5;
+    background: #f7f0f8;
+    color: #454045;
+
+    border-left: 1px solid #aaa;
+    border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+
+    border-radius: 0 0 3px 3px;
 
     max-height: 0;
     overflow: hidden;
 
     opacity: 0;
 
-    border-left: 2px solid #777;
-    border-right: 2px solid #777;
-    border-bottom: 2px solid #777;
-
     transition:
-        max-height 0.6s ease,
-        opacity 0.35s ease;
+        max-height 0.45s ease,
+        opacity 0.3s ease;
 }
 
 
-/* OPEN STATE */
+/* OPEN INFO */
 
 .info-page.open {
-    max-height: 600px;
+    max-height: 500px;
     opacity: 1;
 }
 
 
-/* CONTENT */
+/* INFO TEXT */
 
 .info-content {
-    padding: 25px 28px 28px;
+    padding: 16px 18px 18px;
 
-    color: #3d3034;
-
-    font-size: 15px;
-    line-height: 1.55;
-
-    letter-spacing: 0.5px;
+    font-size: 13px;
+    line-height: 1.45;
+    letter-spacing: 0.3px;
 }
 
-
-/* INFO ROWS */
-
 .info-content p {
-    margin: 0 0 12px;
+    margin: 0 0 9px;
 }
 
 .info-content p:last-child {
@@ -174,33 +140,21 @@ body {
 }
 
 
-/* =========================
-   MOBILE
-   ========================= */
+/* MOBILE */
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
 
-    body {
-        padding: 20px 10px;
+    .about-box {
+        max-width: 100%;
     }
 
     .about-toggle {
-        min-height: 65px;
-        padding: 0 45px 0 15px;
-    }
-
-    .about-title {
-        font-size: 17px;
-        gap: 9px;
-    }
-
-    .arrow {
-        right: 16px;
-        font-size: 26px;
+        height: 44px;
+        font-size: 14px;
     }
 
     .info-content {
-        padding: 20px;
-        font-size: 14px;
+        padding: 14px 16px 16px;
+        font-size: 12px;
     }
 }
