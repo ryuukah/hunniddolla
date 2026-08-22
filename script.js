@@ -3,24 +3,13 @@ const infoPage = document.getElementById("infoPage");
 
 aboutToggle.addEventListener("click", () => {
 
-    const isOpen = infoPage.classList.contains("open");
+    const open = infoPage.classList.toggle("open");
 
-    if (isOpen) {
+    aboutToggle.classList.toggle("open", open);
 
-        // CLOSE
-        infoPage.classList.remove("open");
-        aboutToggle.classList.remove("open");
-
-        aboutToggle.setAttribute("aria-expanded", "false");
-
-    } else {
-
-        // OPEN
-        infoPage.classList.add("open");
-        aboutToggle.classList.add("open");
-
-        aboutToggle.setAttribute("aria-expanded", "true");
-
-    }
+    aboutToggle.setAttribute(
+        "aria-expanded",
+        open ? "true" : "false"
+    );
 
 });
